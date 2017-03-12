@@ -29,7 +29,7 @@ head-container {
   max-width: @content-width;
   max-height: @header-height;
   .u-clearfix;
-//  margin: 0 auto;
+  margin: 0 auto;
 }
 .logo-container {
   max-width: 30%;
@@ -41,6 +41,7 @@ head-container {
 
 .nav-container {
   width: 70%;
+  max-height: @header-height;
   float: right;
   font-size: 0;
   &__toggle-btn {
@@ -68,4 +69,9 @@ head-container {
   height: @footer-height;
   margin-top: @footer-height;
   margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .header {
+    height: auto;
+  }
 }

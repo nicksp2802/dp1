@@ -5,6 +5,7 @@
     <title>DP</title>
     <link rel="stylesheet" href="/css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -25,10 +26,10 @@
                         <i class="glyphicon glyphicon-menu-hamburger"></i>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="main-menu" align="right">
+                    <div class="collapse navbar-collapse" id="main-menu">
                         <nav class="menu">
                             <ul class="menu-list">
-                                <li class="menu-item active"><a href="#" class="menu-link">Головна</a>
+                                <li class="menu-item"><a href="#" class="menu-link">Головна</a>
                                 </li>
                                 <li class="menu-item"><a href="#" class="menu-link">Про мене</a></li>
                                 <li class="menu-item"><a href="#" class="menu-link">Блог</a></li>
@@ -42,12 +43,12 @@
             </div>
         </div>
         <div class="row"> <!--//featured + slider-->
-            <div class="featured">
+            <div class="featured" align="center">
                 <ul class="bxslider">
-                    <li><img src="/images/slide1.jpg"></li>
-                    <li><img src="/images/slide2.jpg"></li>
-                    <li><img src="/images/slide3.jpg"></li>
-                    <li><img src="/images/slide4.jpg"></li>
+                    <li><img src="/images/slide1.jpg" class="image_size" title="Сайт церкви свідків покращення"></li>
+                    <li><img src="/images/slide2.jpg" class="image_size"></li>
+                    <li><img src="/images/slide3.jpg" class="image_size"></li>
+                    <li><img src="/images/slide4.jpg" class="image_size"></li>
                 </ul>
             </div>
         </div>
@@ -141,7 +142,7 @@
     </div>
     <div class="col-xs-1"></div>
 </div>
-
+<script src="/js/vendor.js"></script>
 <script>
     jQuery(document).ready(function(){
        jQuery('.bxslider').bxSlider();

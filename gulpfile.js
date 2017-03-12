@@ -24,7 +24,7 @@ gulp.task("js:vendor", function () {
        "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js",
        "node_modules/bootstrap/dist/js/bootstrap.js",
        "node_modules/toastr/build/toastr.min.js",
-       "src/js/jquery.bxslider.min.js"
+       "src/js/jquery.bxslider.js"
        ])
        .pipe(concat("vendor.js"))
        .pipe(gulpIf(!isDevelopment,uglify()))
@@ -63,6 +63,11 @@ gulp.task("images", function () {
         .pipe(gulp.dest("dist/images"));
 });
 
+gulp.task("bxslider_images", function () {
+    return gulp.src("src/css/images/*.*")
+        .pipe(gulp.dest("dist/css/images"));
+});
+
 gulp.task("fonts", function () {
     return gulp.src("src/fonts/*.*")
         .pipe(gulp.dest("dist/fonts"));
@@ -82,5 +87,5 @@ gulp.task("watch", function () {
     gulp.watch("dist/*.html").on("change", sync.reload);
 });
 
-gulp.task("build", ["html", "css", "js", "images","fonts"]);
+gulp.task("build", ["html", "css", "js", "images","bxslider_images","fonts"]);
 gulp.task("default", ["build", "watch"]);

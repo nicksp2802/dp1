@@ -1,6 +1,16 @@
+/*
 .nav-container {
   max-width: 70%;
   float: right;
+  font-size: 0;
+  &__toggle-btn {
+    font-size: 40px;
+    color: #a1a1a1;
+  }
+}
+*/
+.my-navbar-collapse {
+  display: block;
 }
 
 .menu {
@@ -47,9 +57,35 @@
   }
 }
 
-
 @media (max-width: 767px) {
-  .menu-item {
-    display: block;
+  .menu {
+    &-item {
+      display: block;
+      height: auto;
+      //      padding: 5px;
+    }
+    &-link {
+      display: block;
+      //      line-height: 20px;
+      text-align: right;
+    }
   }
+
+  .nav-container,
+  .nav-container__toggle-btn,
+  .menu {
+    &:hover,
+    &:focus,
+    &.is-active {
+      .header {
+        padding-bottom: 200px;
+      }
+    }
+  }
+
+  /*
+    .header {
+      padding-bottom: 200px;
+    }
+    */
 }
