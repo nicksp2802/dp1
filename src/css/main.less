@@ -7,26 +7,22 @@
    float: right;
  }
 
-.intwitt{
-  display: inline-block;
-  vertical-align: middle;
-  margin: 10px;
-}
-
 .invitation {
   font-family: "Vijaya";
-  font-style: italic;
+//  font-style: italic;
+  text-align: justify;
   font-size: 150%;
   color: #838383;
 }
 .invitation1 {
-  margin-bottom: 10px;
+  padding-top: 35px;
+  padding-bottom: 30px;
   border-bottom: 2px dashed #d1d1d1;
   margin-left: 0px;
   margin-right: 0px;
 }
 .left-block {
-  max-width: 265px;
+  max-width: 290px;
   padding-right: 25px;
   border-right: 2px dashed #d1d1d1;
   shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -34,7 +30,7 @@
   vertical-align: top;
 }
 .center-block {
-  max-width: 265px;
+  max-width: 315px;
   padding-left: 25px;
   padding-right: 25px;
   border-right: 2px dashed #d1d1d1;
@@ -43,14 +39,14 @@
 }
 .heading {
   font-family: "Vijaya";
-  font-style: italic;
+//  font-style: italic;
   font-size: 150%;
   color: #838383;
   margin-bottom: 0%;
 }
 .right-heading {
   font-family: "Vijaya";
-  font-style: italic;
+//  font-style: italic;
   font-size: 150%;
   color: #838383;
   margin-bottom: 10%;
@@ -82,12 +78,22 @@
   font-style: italic;
   font-size: 80%;
   vertical-align: middle;
-  padding-left: 12px;
+  padding-left: 60px;
 }
 .blog-preview {
   display: block;
   margin-bottom: 10px;
 }
-.siderbar {
-  font-family: "Verdana";
+
+.my-image {
+  float: right;
+  padding: 15px;
+}
+@media (max-width: 767px) {
+  .left-block {
+    border-right: none;
+  }
+  .center-block {
+    border-right: none;
+  }
 }

@@ -68,6 +68,11 @@ gulp.task("bxslider_images", function () {
         .pipe(gulp.dest("dist/css/images"));
 });
 
+gulp.task("bxslider_thumbnails", function () {
+    return gulp.src("src/images/thumbnails/*.*")
+        .pipe(gulp.dest("dist/images/thumbnails"));
+});
+
 gulp.task("fonts", function () {
     return gulp.src("src/fonts/*.*")
         .pipe(gulp.dest("dist/fonts"));
@@ -87,5 +92,5 @@ gulp.task("watch", function () {
     gulp.watch("dist/*.html").on("change", sync.reload);
 });
 
-gulp.task("build", ["html", "css", "js", "images","bxslider_images","fonts"]);
+gulp.task("build", ["html", "css", "js", "images","bxslider_images","bxslider_thumbnails","fonts"]);
 gulp.task("default", ["build", "watch"]);
