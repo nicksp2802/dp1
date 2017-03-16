@@ -11,12 +11,25 @@ var sync = require("browser-sync").create();
 var isDevelopment = true;
 
 gulp.task("js:own", function () {
-   return gulp.src("src/js/main.js")
+   return gulp.src(["src/js/main.js",
+       "src/js/blogtexts.js",
+       "src/js/blog.js"
+   ])
        .pipe(gulpIf(isDevelopment,sourcemaps.init()))
        .pipe(uglify())
        .pipe(gulpIf(isDevelopment,sourcemaps.write()))
        .pipe(gulp.dest("dist/js"));
 });
+/*
+gulp.task("js:own1", function () {
+    return gulp.src("src/js/blog.js")
+        .pipe(gulpIf(isDevelopment,sourcemaps.init()))
+        .pipe(uglify())
+        .pipe(gulpIf(isDevelopment,sourcemaps.write()))
+        .pipe(gulp.dest("dist/js"));
+});
+
+*/
 
 gulp.task("js:vendor", function () {
    return gulp.src([
@@ -80,7 +93,7 @@ gulp.task("fonts", function () {
 
 
 gulp.task("css", ["css:own", "css:vendor"]);
-gulp.task("js", ["js:own", "js:vendor"]);
+gulp.task("js", ["js:own",/*"js:own1",*/ "js:vendor"]);
 gulp.task("watch", function () {
     sync.init({
         server:"dist"

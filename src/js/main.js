@@ -2,19 +2,44 @@
  * Created by NickSp on 15.03.2017.
  */
 
+//for main page
+
+var idParent = document.querySelector("#sidebar"),
+    sidebarChild1 = document.querySelector("#invitation1"),
+    sidebarChild2 = document.querySelector("#blocks"),
+    sidebarChild3;
+
+var linkOfBlog0 = document.querySelector("#title-of-blog0"),
+    dateOfBlog0 = document.querySelector("#date-of-blog0");
+linkOfBlog0.innerText = blogtexts [0];
+dateOfBlog0.innerText = blogtexts [1];
+var linkOfBlog1 = document.querySelector("#title-of-blog1"),
+    dateOfBlog1 = document.querySelector("#date-of-blog1");
+linkOfBlog1.innerText = blogtexts [3];
+dateOfBlog1.innerText = blogtexts [4];
+var linkOfBlog2 = document.querySelector("#title-of-blog2"),
+    dateOfBlog2 = document.querySelector("#date-of-blog2");
+linkOfBlog2.innerText = blogtexts [6];
+dateOfBlog2.innerText = blogtexts [7];
+var linkOfBlog3 = document.querySelector("#title-of-blog3"),
+    dateOfBlog3 = document.querySelector("#date-of-blog3");
+linkOfBlog3.innerText = blogtexts [9];
+dateOfBlog3.innerText = blogtexts [10];
+
 var numOfBlog = document.querySelector("#right-block");
 numOfBlog.addEventListener("click", clickreaction);
 function clickreaction(e) {
-
-    console.log(e.path[1].id);
-    var blogtitle, blogtext;
-    switch (e.path[1].id) {
-        case'blogpost0':
-            blogtitle = blogs [0][0];
-            blogtext = blogs [0][1];
-    }
+    var blogtitle, blogdate, blogtext;
+    idParent.removeChild(sidebarChild1);
+    idParent.removeChild(sidebarChild2);
+    var indexOfBlog = e.path[1].id[8];
+    blogtitle = blogtexts [indexOfBlog * 3];
+    blogdate = blogtexts [indexOfBlog * 3 + 1];
+    blogtext = blogtexts [indexOfBlog * 3 + 2];
+    sidebarChild3 = document.createElement('div');
+    sidebarChild3.innerHTML = "<h3 align='center'><strong>" +
+        blogtitle + "</strong></h3>\n<h6 align='center'>" +
+        blogdate + "</h6>\n<p>" + blogtext + "</p>";
+    idParent.appendChild(sidebarChild3);
 }
 
-var blogs = [];
-blogs [0][0]= "Blog1";
-blogs [0][1]= "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur cumque eius expedita fuga incidunt ipsum laudantium numquam, odit praesentium, quia saepe, sequi sint sit ullam veniam voluptatibus. Aspernatur at dignissimos labore laudantium minima nam, nesciunt nihil optio. Architecto asperiores at consequatur delectus dolores facere facilis fugit inventore itaque magni, molestias mollitia natus non nostrum odit omnis, quibusdam sint unde. Adipisci, animi aspernatur debitis deserunt exercitationem, inventore magni, mollitia nesciunt nulla quo similique sit totam? Corporis ea error id. Adipisci autem expedita fugiat quam quod quos saepe. Modi sequi similique sit vitae voluptatem. Aliquid aperiam culpa cupiditate debitis delectus, eaque eligendi enim eum ex explicabo fugiat illo ipsam ipsum itaque iure maxime molestiae non obcaecati possimus provident quaerat quas, quis ratione sed soluta tempore totam voluptate. A accusantium architecto at aut consequatur corporis cumque dignissimos ea, ipsam laudantium maxime officiis perspiciatis similique sit tempora ullam velit veniam voluptate! Ab adipisci enim, est harum laborum nulla possimus quaerat qui rerum saepe sunt voluptatibus! Aperiam aut deleniti, dolorum et illo molestiae perferendis placeat quasi quisquam recusandae? Ab blanditiis cupiditate dolorum exercitationem expedita illo maxime minus modi obcaecati quasi, quisquam ratione saepe sunt suscipit veritatis! A culpa delectus facere ipsa necessitatibus nobis quas ratione, tempore tenetur vero. Consectetur error nesciunt porro! Eos, maiores, vel. Accusantium assumenda consequatur culpa cupiditate earum hic labore, reprehenderit sint sunt tempore. Ab, animi architecto at commodi consequuntur delectus ducimus eius eligendi eum eveniet laborum laudantium magnam minima necessitatibus numquam odit officiis sint suscipit velit vitae. Accusamus aperiam explicabo harum incidunt ipsam laborum minus nam obcaecati odio officia possimus quos tempore, voluptatum. Assumenda deleniti, dicta doloremque minus perferendis placeat quaerat saepe tenetur totam! Ab accusamus accusantium alias consequatur debitis doloremque doloribus dolorum facilis harum illo ipsa laudantium mollitia non nulla officia perspiciatis possimus ratione reprehenderit rerum tempore, tenetur vero?";
