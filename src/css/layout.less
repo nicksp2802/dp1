@@ -4,6 +4,7 @@
 
 html, body {
   height: 100%;
+  margin: 0;
 }
 
 body {
@@ -15,10 +16,27 @@ body {
   background-repeat: repeat-y;
 }
 
+.wrapper {
+  min-height: 100%;
+//  max-width: 850px;
+}
+/*
+.wrapper:after {
+  content: '';
+  display: block;
+  padding-bottom: 100px;
+}
+*/
+.container {
+max-width: 850px;
+  max-height: none;
+  height: 100%;
+}
+/*
 .bord {
   width: 175px;
 }
-
+*/
 .u-clearfix {
   &:after {
     content: '';
@@ -27,12 +45,9 @@ body {
   }
 }
 
-.wrapper {
-  min-height: 100%;
-}
-
 .header {
   max-height: @header-height;
+  margin-left: 0px;
   .u-clearfix;
 }
 
@@ -52,10 +67,27 @@ head-container {
   float: left;
 }
 
-.logo-pic {
+.logo {
+  width: 183px;
+  height: 53px;
+  font-family: Vijaya;
+  text-decoration: none !important;
+}
+.logo1 {
+  font-size: 48px;
+  color: #a5a5a5;
+  line-height: 75%;
+  letter-spacing: -0.05em;
+  word-spacing: 0.0em;
+  background: linear-gradient(90deg, #5b5b5b 30%,#6b6b6b 60%,#7b7b7b 10%,#b5b5b5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  vertical-align: middle;
-  //  margin-top: 30px;
+.logo2 {
+  font-size: 18px;
+  color: #a5a5a5;
+  line-height: 40%;
 }
 
 .nav-container {
@@ -68,9 +100,13 @@ head-container {
     color: #a1a1a1;
     position: absolute;
     right: 0;
-    top: 10px;
+    top: 50px;
   }
 }
+.h1-title {
+  font-family: Vijaya;
+  font-size: 40px;
+ }
 
 .featured {
   padding-bottom: 30px;
@@ -88,24 +124,28 @@ head-container {
 }
 
 .caption {
+  width: 792px;
+  max-width: 792px;
+  height: 56px;
   position: absolute;
-  left: 0;
-  top: 168px;
+  left: 14px;
+  top: 180px;
   padding: 14px;
+  background-color: #000;
+  opacity: 0.5;
 }
 
 .capt_text {
-  position: absolute;
-  top: 198px;
   font-size: 16px;
   color: #fff;
+  opacity: 1;
 }
 
 .content {
   padding-bottom: @footer-height;
 }
 
-.siderbar {
+.mainbar {
   padding-top: 35px;
   padding-bottom: 20px;
   border-bottom: 2px dashed #d1d1d1;
@@ -114,7 +154,7 @@ head-container {
 }
 
 .twitter-bar {
-  display: inline-block;
+//  display: inline-block;
   height: 54px;
   width: 100%;
   background-color: #ddd;
@@ -136,6 +176,7 @@ head-container {
   height: @footer-height;
   margin-top: @footer-height;
   margin-bottom: 30px;
+  max-width: 850px;
 }
 
 .thumb {

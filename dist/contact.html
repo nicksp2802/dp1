@@ -5,17 +5,21 @@
     <title>DP</title>
     <link rel="stylesheet" href="/css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <!--jQuery migration-->
 </head>
 <body>
 <div class="wrapper">
-    <div class="col-xs-1"></div>
-    <div class="col-xs-10">
+
+    <div class="container">
         <div class="row header">            <!--//header-->
             <div class="head-container">
                 <div class="logo-container"> <!--//logo -->
                     <a href="index.html" class="logo">
-                        <img src="images/logo.png" alt="Logo" class="logo-pic" align="left">
+                        <div class="logo">
+                            <p class="logo1" align="center">My Portfolio</p>
+                            <p class="logo2" align="center">Nestor saytopysets</p>
+                        </div>
                     </a>
                 </div>
                 <div class="nav-container">  <!-- //menu-->
@@ -29,11 +33,10 @@
                     <div class="collapse navbar-collapse" id="main-menu">
                         <nav class="menu">
                             <ul class="menu-list">
-                                <li class="menu-item"><a href="index.html" class="menu-link active">Головна</a>
-                                </li>
+                                <li class="menu-item"><a href="index.html" class="menu-link">Головна</a></li>
                                 <li class="menu-item"><a href="about_me.html" class="menu-link">Про мене</a></li>
-                                <li class="menu-item"><a href="blog.html" class="menu-link">Блог</a></li>
-                                <li class="menu-item"><a href="#" class="menu-link">Мої роботи</a></li>
+                                <li class="menu-item"><a href="blog1.html" class="menu-link">Блог</a></li>
+                                <li class="menu-item"><a href="mybestworks.html" class="menu-link">Мої роботи</a></li>
                                 <li class="menu-item"><a href="contact.html" class="menu-link active">Зв'язок зі мною</a></li>
                             </ul>
                         </nav>
@@ -42,43 +45,36 @@
                 </div>
             </div>
         </div>
-        <div class="row"> <!--//featured + slider-->
-            <div class="featured" align="center">
-                <ul class="bxslider mybxslider">
-                    <li>
-                        <img src="/images/slide1.jpg" class="image_size" title="Сайт церкви свідків покращення">
-                        <img src="/images/Featured Shine.png" class="image_size shine" alt="">
-                        <img src="/images/caption.png" class="caption" alt="">
-                        <a href="#" class="capt_text" align="center"><strong>Сайт церкви свідків покращення</strong></a>
-                    <li><img src="/images/slide2.jpg" class="image_size">
-                        <img src="/images/Featured Shine.png" class="image_size shine" alt="">
-                        <img src="/images/caption.png" class="caption" alt="">
-                        <a href="#" class="capt_text"><strong>Сайт прихильників теорії чайника Рассела</strong></a>
-                    </li>
-                    <li><img src="/images/slide3.jpg" class="image_size">
-                        <img src="/images/Featured Shine.png" class="image_size shine" alt="">
-                        <img src="/images/caption.png" class="caption" alt="">
-                        <a href="http://www.lemky.org.ua" class="capt_text"><strong>Сайт Ужгородської спільноти пастофаріан</strong></a>
-                    </li>
-                    <li><img src="/images/slide4.jpg" class="image_size">
-                        <img src="/images/Featured Shine.png" class="image_size shine" alt="">
-                        <img src="/images/caption.png" class="caption" alt="">
-                        <a href="#" class="capt_text"><strong>Сайт художниці Христини</strong></a>
-                    </li>
-                </ul>
-                <div id="bx-pager">
-                    <a data-slide-index="0" href=""><img src="/images/thumbnails/slide1.jpg" class="thumb"/></a>
-                    <a data-slide-index="1" href=""><img src="/images/thumbnails/slide2.jpg" class="thumb"/></a>
-                    <a data-slide-index="2" href=""><img src="/images/thumbnails/slide3.jpg" class="thumb"/></a>
-                    <a data-slide-index="3" href=""><img src="/images/thumbnails/slide4.jpg" class="thumb"/></a>
-                </div>
-            </div>
-        </div>
-        <div class="row"> <!--//main content-->
 
-            <div class="siderbar" id="sidebar">
+        <div class="mainrbar" id="mainbar">
+            <div id="w" class="w12345">
+                <h1>Напишіть листа!</h1>
+                <form id="contactform" name="contact" method="post" action="#">
+                    <p class="note"><span class="req">*</span> Поля з зіроочкою обов'язкові для заповнення</p>
+                    <div class="row">
+                        <label for="name">Ваше Ім'я <span class="req">*</span></label>
+                        <input type="text" name="name" id="name" class="txt" tabindex="1" placeholder="Стів Джобс" required>
+                    </div>
 
+                    <div class="row">
+                        <label for="email">E-mail Адреса <span class="req">*</span></label>
+                        <input type="email" name="email" id="email" class="txt" tabindex="2" placeholder=" address@mail.ua" required>
+                    </div>
 
+                    <div class="row">
+                        <label for="subject">Тема <span class="req">*</span></label>
+                        <input type="text" name="subject" id="subject" class="txt" tabindex="3" placeholder="Тема листа" required>
+                    </div>
+
+                    <div class="row">
+                        <label for="message">Повідомлення <span class="req">*</span></label>
+                        <textarea name="message" id="message" class="txtarea textareamy" tabindex="4" required rows="10" cols="80"></textarea>
+                    </div>
+
+                    <div class="center">
+                        <input type="submit" id="submitbtn" name="submitbtn" tabindex="5" value="Відправити листа">
+                    </div>
+                </form>
             </div>
         </div>
         <div class="row"> <!--//twitter bar-->
@@ -103,23 +99,11 @@
             </div>
         </div>
     </div>
-    <div class="col-xs-1"></div>
+
 </div>
-<script src="/js/main.js"></script>
 <script src="/js/vendor.js"></script>
-<script>
+<script src="/js/main.js"></script>
 
-    $('.bxslider').bxSlider({
-        pagerCustom: '#bx-pager'
-    });
-
-    /*
-     jQuery(document).ready(function(){
-     jQuery('.bxslider').bxSlider();
-     });
-     */
-
-</script>
 
 </body>
 </html>

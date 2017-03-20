@@ -10,7 +10,7 @@ for (var i = 0;i < 4;i++){
     blogtitle = blogtexts [i * 3];
     blogdate = blogtexts [i * 3 + 1];
     blogtext = blogtexts [i * 3 + 2];
-    blogpage =blogpage+ "<a href='#' align='center' id='blogPageBlog"+i+"'><strong>" +
+    blogpage =blogpage+ "<a href='#' class='blogtitle' id='blogPageBlog"+i+"'><strong>" +
         blogtitle + "</strong></a>\n<h6 align='center'>" +
         blogdate + "</h6>\n<p>" + blogtext.substr(0, 200) + "...</p>\n";
 };

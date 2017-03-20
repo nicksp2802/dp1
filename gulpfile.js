@@ -11,25 +11,12 @@ var sync = require("browser-sync").create();
 var isDevelopment = true;
 
 gulp.task("js:own", function () {
-   return gulp.src(["src/js/main.js",
-       "src/js/blogtexts.js",
-       "src/js/blog.js"
-   ])
+   return gulp.src("src/js/main.js")
        .pipe(gulpIf(isDevelopment,sourcemaps.init()))
        .pipe(uglify())
        .pipe(gulpIf(isDevelopment,sourcemaps.write()))
        .pipe(gulp.dest("dist/js"));
 });
-/*
-gulp.task("js:own1", function () {
-    return gulp.src("src/js/blog.js")
-        .pipe(gulpIf(isDevelopment,sourcemaps.init()))
-        .pipe(uglify())
-        .pipe(gulpIf(isDevelopment,sourcemaps.write()))
-        .pipe(gulp.dest("dist/js"));
-});
-
-*/
 
 gulp.task("js:vendor", function () {
    return gulp.src([
@@ -37,7 +24,7 @@ gulp.task("js:vendor", function () {
        "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js",
        "node_modules/bootstrap/dist/js/bootstrap.js",
        "node_modules/toastr/build/toastr.min.js",
-       "src/js/jquery.bxslider.js"
+       "src/js/jquery.bxslider.min.js"
        ])
        .pipe(concat("vendor.js"))
        .pipe(gulpIf(!isDevelopment,uglify()))
